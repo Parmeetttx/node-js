@@ -1,0 +1,38 @@
+    <!-- Bootstrap core JavaScript-->
+    <script src="/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/assets/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="/assets/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/assets/js/demo/chart-area-demo.js"></script>
+    <script src="/assets/js/demo/chart-pie-demo.js"></script>
+
+    <script src="//cdn.ckeditor.com/4.5.7/full-all/ckeditor.js"></script>
+<script>
+    jQuery(document).ready(function($){
+        var _content = $('.ckeditor').get(0);
+        var basePath = "/";
+        var editor = CKEDITOR.replace( _content,
+        {
+            height: 400,
+            filebrowserBrowseUrl : basePath + 'kcfinder/browse.php?type=files',
+            filebrowserImageBrowseUrl : basePath + 'kcfinder/browse.php?type=images',
+            filebrowserFlashBrowseUrl : basePath + 'kcfinder/browse.php?type=flash',
+            filebrowserUploadUrl : basePath + 'kcfinder/upload.php?type=files',
+            filebrowserImageUploadUrl : basePath + 'kcfinder/upload.php?type=images',
+            filebrowserFlashUploadUrl : basePath + 'kcfinder/upload.php?type=flash'
+        });
+    });
+</script>
+
+</body>
+
+</html>

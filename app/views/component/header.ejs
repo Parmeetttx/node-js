@@ -1,0 +1,68 @@
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light p-0">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center border-start border-end px-3">
+                    <small class="fa fa-phone-alt me-2"></small>
+                    <small>+012 345 6789</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center border-end px-3">
+                    <small class="far fa-envelope-open me-2"></small>
+                    <small>info@example.com</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center border-end px-3">
+                    <small class="far fa-clock me-2"></small>
+                    <small>Mon - Fri : 09 AM - 09 PM</small>
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end">
+                <div class="h-100 d-inline-flex align-items-center">
+                    <a class="btn btn-square border-end border-start" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-square border-end" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-square border-end" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-square border-end" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
+        <a href="/" class="navbar-brand d-flex align-items-center">
+            <h1 class="m-0"><i class="fa fa-building text-primary me-3"></i>APEX</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-3 py-lg-0">
+                <a href="/" class="nav-item nav-link active">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="our-products.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Services</a>
+                    <div class="dropdown-menu bg-light m-0">
+
+                        <% Products.forEach((product_item) => { 
+                            let product_name = product_item.Heading;
+                            let product_link = product_item.url;
+                        %>
+                            <a 
+                                href="<%= product_link %>.html" 
+                                class="dropdown-item"
+                            >
+                                <%= product_name %>
+                            </a>
+                        <% }); %>
+ 
+                    </div>
+                </div>
+                <a href="/company-profile.html" class="nav-item nav-link">About Us</a>
+                <a href="/sitemap.html" class="nav-item nav-link">Sitemap</a>
+                <a href="/our-presence.html" class="nav-item nav-link">Location</a>
+                <a href="/contact-us.html" class="nav-item nav-link">Contact Us</a>
+                <a href="/dashboard/login" class="nav-item nav-link">Login</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->

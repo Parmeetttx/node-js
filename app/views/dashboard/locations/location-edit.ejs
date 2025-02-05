@@ -1,0 +1,51 @@
+<%-include('../component/header.ejs')-%> 
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="dashboard-content-area">
+                <!-- put your contente -->
+
+    <h1 class="mb-2 mt-2">Edit locations</h1>
+
+        <form method="post" action="/dashboard/locations/edit/<%-Edit_locations._id-%>?_method=PUT">
+
+            <div class="mb-3 mt-3 row g-9 align-items-center">
+                <div class="col col-lg-2"><label class="form-label">Name</label></div>
+                <div class="col"><input type="text" name="Heading" value="<%-Edit_locations.Heading-%>" class="form-control" placeholder="Page Heading"></div>
+              </div>
+        
+              <div class="mb-3 mt-3 row g-9 align-items-center"> 
+                <div class="col col-lg-2"><label class="form-label">Parent</label></div>
+                <div class="col">
+                    <select id="parent" class="form-select form-control" name="Parent">
+                        <% if (Edit_locations.Parent) { %>
+                            <option value="<%- Edit_locations.Parent._id %>" selected><%- Edit_locations.Parent.Heading %></option>
+                        <% } else { %>
+                            <option value="" selected>None</option>
+                        <% } %>
+                        <% Locations.forEach(location => { %>
+                            <% if ((location._id.toString() !== (Edit_locations.Parent ? Edit_locations.Parent._id.toString() : '')) && (location.Parent === null)) { %>
+                                <option value="<%= location._id %>"><%= location.Heading %></option>
+                            <% } %>
+                        <% }) %>
+                    </select>
+
+                
+                </div>
+                
+                <!-- List items without parent -->
+              </div>
+      
+            <div class="mb-5 mt-3 align-items-center text-center"> 
+                 <button type="submit" class="btn btn-primary">Submit Data</button>
+            </div>
+          </form>
+
+              <!-- end your content here -->
+             </div>
+        </div>
+    </div>
+</div>
+
+<%-include('../component/footer.ejs')-%>

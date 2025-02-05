@@ -1,0 +1,74 @@
+<%-include('../component/header.ejs')-%> 
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="dashboard-content-area">
+                <!-- put your contente -->
+
+    <h1 class="mb-2 mt-2">Edit Page</h1>
+
+        <form method="post"  enctype="multipart/form-data" action="/dashboard/pages/edit/<%-EditData.url-%>?_method=PUT">
+
+            <div class="mb-3 mt-3 row g-9 align-items-center">
+              <div class="col col-lg-2"><label class="form-label">Name</label></div>
+              <div class="col"><input type="text" name ="Heading" class="form-control" value="<%-EditData.Heading-%>" placeholder="Page Heading"></div>
+            </div>
+      
+            <div class="mb-3 mt-3 row g-9 align-items-center"> 
+              <div class="col col-lg-2"><label class="form-label">Photo</label></div>
+              <div class="col"><input type="file" name="Photo" class="form-control" ></div>
+            </div>
+      
+            <!-- <div class="mb-3 mt-3 row g-9 align-items-center"> 
+              <div class="col col-lg-2"><label class="form-label">Multiple Photo</label></div>
+              <div class="col"><input type="file" name="MultiPhoto" class="form-control"></div>
+            </div> -->
+      
+            <div class="mb-3 mt-3 row g-9 align-items-center"> 
+              <div class="col col-lg-2"><label class="form-label">PDF Catelouge</label></div>
+              <div class="col"><input type="file" name="Pdf" class="form-control"></div>
+            </div>      
+      
+            <div class="mb-3 mt-3 row g-9 align-items-center">
+              <div class="col col-lg-2"><label class="form-label">Short Description</label></div>
+              <div class="col"><textarea class="ckeditor form-control Details" name="Short_Description"  placeholder="Short Description"><%-EditData.Short_Description-%></textarea></div>
+            </div>
+            
+            <div class="mb-3 mt-3 row g-9 align-items-center">
+              <div class="col col-lg-2"><label class="form-label">Page Description</label></div>
+              <div class="col"><textarea id="editor" class="ckeditor form-control Details" name="Description"  placeholder="Page Description"><%-EditData.Description-%></textarea></div>
+            </div>
+      
+            <div class="mb-3 mt-3 row g-9 align-items-center">
+              <div class="col col-lg-2"><label class="form-label">Page Extra Description</label></div>
+              <div class="col"><textarea class="ckeditor form-control Details" name="Extra_Description" placeholder="Page Description"><%-EditData.Extra_Description-%></textarea></div>
+            </div>
+      
+            <div class="mb-3 mt-3 row g-9 align-items-center">           
+              <div class="col col-lg-2"><label class="form-label">Title</label></div>
+              <div class="col"><input type="text" name ="Title" class="form-control" value="<%-EditData.Title-%>" placeholder="Page Meta Description"></div>
+          </div>
+      
+            <div class="mb-3 mt-3 row g-9 align-items-center">           
+                <div class="col col-lg-2"><label class="form-label">Meta Description</label></div>
+                <div class="col"><input type="text" name ="Meta_Description" class="form-control" value="<%-EditData.Meta_Description-%>" placeholder="Page Meta Description"></div>
+            </div>
+      
+            <div class="mb-3 mt-3 row g-9 align-items-center">
+              <div class="col col-lg-2"><label class="form-label">Meta Keyword</label></div>
+              <div class="col"><input type="text" name ="Meta_Keyword" class="form-control" value="<%-EditData.Meta_Keyword-%>" placeholder="Page Meta Keyword"></div>
+            </div>
+      
+            <div class="mb-5 mt-3 align-items-center text-center"> 
+                 <button type="submit" class="btn btn-primary">Submit Data</button>
+            </div>
+          </form>
+
+              <!-- end your content here -->
+             </div>
+        </div>
+    </div>
+</div>
+
+<%-include('../component/footer.ejs')-%>

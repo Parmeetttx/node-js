@@ -1,0 +1,27 @@
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+for nodemon
+
+<!-- <% Products.forEach((Product) => { 
+                            let url = Product.url;
+                            let name = Product.Heading; 
+                        %>
+                            <a 
+                                href="<%= location && location.Url ? `/${location.Url}/${url}.html` : `/${url}.html` %>" 
+                                class="dropdown-item">
+                                <%= name %>
+                            </a>
+                        <% }) %> -->
+
+                        
+<% Products.forEach((product_item) => { 
+                            let product_name = product_item.Heading;
+                            let product_link = product_item.url;
+                        %>
+                            <a 
+                                href="<%= subdomain ? '/' + subdomain + '/' : '' %><%= product_link %>.html" 
+                                class="dropdown-item"
+                            >
+                                <%= product_name %>
+                            </a>
+                        <% }); %>
